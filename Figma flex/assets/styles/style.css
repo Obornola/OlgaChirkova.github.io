@@ -1,0 +1,194 @@
+
+
+h1,
+        h2,
+        h3 {
+            font-family: Helvetica, Arial, sans-serif;
+            font-style: normal;
+        }
+
+        h1 {
+            position: absolute;
+            width: 645px;
+            height: 184px;
+            left: 240px;
+            top: 240px;
+            font-weight: bold;
+            font-size: 80px;
+            line-height: 110%;
+            display: flex;
+            align-items: center;
+            color: #212353;
+        }
+
+        h2 {
+            position: absolute;
+            width: 475px;
+            height: 100px;
+            left: 790px;
+            top: 1028.18px;
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 130%;
+            display: flex;
+            align-items: center;
+            color: #212353;
+        }
+
+        p {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-style: normal;
+        }
+
+        #image1 {
+            position: absolute;
+            width: 885px;
+            height: 468px;
+            left: 603px;
+            top: 336px;
+            background: url(assets/images/image11.png);
+        }
+
+        #image2 {
+            position: absolute;
+            width: 477px;
+            height: 504px;
+            left: 251px;
+            top: 935px;
+        }
+
+        #logo {
+            position: absolute;
+            width: 49px;
+            height: 35px;
+            left: 240px;
+            top: 62px;
+        }
+
+        #mainmenu {
+            position: absolute;
+            width: 322px;
+            height: 30px;
+            left: 410px;
+            top: 65px;
+        }
+
+        #about {
+            width: 53px;
+            font-weight: 800;
+            color: #212353;
+        }
+
+        #help {
+            width: 35px;
+            height: 26px;
+            left: calc(50% - 35px/2 - 279.5px);
+            top: 67px;
+            font-weight: 500;
+            color: #4B5D68;
+        }
+
+        #features {
+            width: 63px;
+            height: 26px;
+            left: 578px;
+            top: 67px;
+            font-weight: 500;
+            color: #4B5D68;
+        }
+
+        #signup {
+            width: 51px;
+            height: 26px;
+            left: 681px;
+            top: 67px;
+            font-weight: 500;
+            color: #4B5D68;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .menu {
+            font-family: 'Poppins', Arial, sans-serif;
+            text-decoration: none;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 160%;
+        }
+
+        .btn1 {
+            position: absolute;
+            width: 210px;
+            height: 60px;
+            left: 1150px;
+            top: 50px;
+            border: 1px solid #FFFFFF;
+            background: #FFFFFF;
+            box-shadow: 0px 5px 5px rgba(75, 93, 104, 0.1);
+            border-radius: 50px;
+        }
+
+        .btn2 {
+            position: absolute;
+            width: 170px;
+            height: 60px;
+            left: 240px;
+            top: 644px;
+            border: 1px solid #9C69E2;
+            background: #9C69E2;
+            border-radius: 50px;
+        }
+
+        #button_name1 {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 160%;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.005em;
+            color: #212353;
+        }
+
+        #button_name2 {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-style: normal;
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 160%;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        .text1 {
+            position: absolute;
+            width: 380px;
+            height: 120px;
+            left: 240px;
+            top: 474px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 160%;
+            color: #4B5D68;
+        }
+
+        .text2 {
+            position: absolute;
+            width: 474px;
+            height: 170px;
+            left: 790px;
+            top: 1168.18px;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 160%;
+            color: #4B5D68;
+        }
+
+        .pink_section {
+            width: 1117px;
+            height: 560px;
+            left: 240px;
+            top: 903.18px;
+            background: rgba(240, 99, 184, 0.15);
+            border-radius: 50px;
+        }
