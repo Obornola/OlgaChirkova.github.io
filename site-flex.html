@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css" />
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        .header {
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(187, 185, 185);
+        }
+
+        .container {
+            display: flex;
+            height: 60vh;
+        }
+
+        .main {
+            width: 60%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: rgb(245, 237, 227);
+        }
+
+        .article-one,
+        .article-two,
+        .article-three {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(240, 209, 124);
+        }
+
+        .article-one,
+        .article-two {
+            width: 40%;
+            height: 12vh;
+            margin-top: 100px;
+        }
+
+        .article-three {
+            width: 90%;
+            height: 12vh;
+            margin-top: 30px;
+        }
+
+        .aside {
+            width: 40%;
+            background-color: rgb(192, 233, 173);
+            text-align: center;
+        }
+
+        .title {
+            width: 100%;
+            display: flex;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .footer {
+            height: 20vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(187, 185, 185);
+        }
+
+        .section {
+            width: 20%;
+            height: 15vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">Шапка страницы</div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="main"><span class="title">Основная часть</span>
+                <article class="article-one">Ещё 1</article>
+                <article class="article-two">Ещё 2</article>
+                <article class="article-three">Ещё 3</article>
+            </div>
+            <aside class="aside"><span class="title">Боковая область</span></aside>
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <section class="section">Секция футера 1</section>
+            <section class="section">Секция футера 2</section>
+            <section class="section">Секция футера 3</section>
+            <section class="section">Секция футера 4</section>
+        </div>
+    </footer>
+</body>
+
+</html>
