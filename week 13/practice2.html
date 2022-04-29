@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическое задание 2</title>
+</head>
+
+<body>
+    <button onclick="calcSum()">+</button>
+    <button onclick="calcSubtraction()">-</button>
+    <button onclick="calcMultiplication()">*</button>
+    <button onclick="calcDivision()">/</button>
+
+    <script>
+        function calcSum() {
+            let a = prompt('Задайте значение a');
+            let b = prompt('задайте значение b')
+            let sum = +a + +b;
+            alert(`Результат ${sum}`);
+        };
+
+        function calcSubtraction() {
+            let a = prompt('Задайте значение a');
+            let b = prompt('задайте значение b')
+            let subtraction = +a - +b;
+            alert(`Результат ${subtraction}`);
+        };
+        
+        function calcMultiplication() {
+            let a = prompt('Задайте значение a');
+            let b = prompt('задайте значение b')
+            let мultiplication = +(a * b);
+            alert(`Результат ${мultiplication}`);
+        };
+
+        function calcDivision() {
+            let a = prompt('Задайте значение a');
+            let b = prompt('задайте значение b')
+            let division = +(a / b);
+            alert(`Результат ${division}`);
+        };
+
+    </script>
+</body>
+
+</html>
