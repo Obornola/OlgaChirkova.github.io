@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+        }
+
+        .value-input {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        .item {
+            margin: 10px;
+        }
+
+        .calculation {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-self: center;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        #errorMessage {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="value-input">
+                <label class="item">Задайте первое число:
+                    <input id="num_a" type="text"> </label>
+                <label class="item">Задайте второе число:
+                    <input id="num_b" type="text"> </label>
+                <label class="item">Результат вычисления:
+                    <span id="result"> </span>
+                    <div id="errorMessage"></div>
+            </div>
+            <div class="calculation">
+                <button onclick="calcSum()">+</button>
+                <button onclick="calcSubtraction()">-</button>
+                <button onclick="calcMultiplication()">*</button>
+                <button onclick="calcDivision()">/</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcSum() {
+            let a = document.getElementById('num_a').value;
+            let b = document.getElementById('num_b').value;
+            let sum = +a + +b;
+            let result = document.getElementById('result')
+            result.innerHTML = sum;
+        };
+
+
+        function calcSubtraction() {
+            let a = document.getElementById('num_a').value;
+            let b = document.getElementById('num_b').value;
+            let subtraction = +a - +b;
+            let result = document.getElementById('result')
+            result.innerHTML = subtraction;
+        };
+
+        function calcMultiplication() {
+            let a = document.getElementById('num_a').value;
+            let b = document.getElementById('num_b').value;
+            let multiplication = +(a * b);
+            let result = document.getElementById('result')
+            result.innerHTML = multiplication;
+        };
+
+        function calcDivision() {
+            let a = document.getElementById('num_a').value;
+            let b = document.getElementById('num_b').value;
+            let division = +(a / b);
+            document.getElementById('errorMessage').innerHTML = "";
+            if (b == 0) {
+                document.getElementById('errorMessage')
+                    .innerHTML += "На ноль делить нельзя!</br>";
+            } else {
+                let result = document.getElementById('result')
+                result.innerHTML = division;
+            }
+        };
+    </script>
+</body>
+
+</html>
