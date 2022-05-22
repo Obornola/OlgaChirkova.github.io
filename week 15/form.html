@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+    <style>
+        .wrapper {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 400px;
+            min-height: 600px;
+            display: flex;
+            background-color: #009edf;
+            color: #fff;
+            border-radius: 6px 6px;
+            box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 31%);
+        }
+
+        .form {
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-item {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        input::-webkit-input-placeholder {
+            font-size: 12px;
+            padding-top: 3px;
+        }
+
+        label {
+            margin-bottom: 15px;
+        }
+
+        .form-title {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .form-control {
+            width: 300px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px 6px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21);
+        }
+
+        .register {
+            margin-top: 30px;
+            padding: 10px 20px 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 6px 6px;
+            font-size: 18px;
+        }
+
+        #errorMessage {
+            color: red;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="form">
+                <div class="form-item">
+                    <label for="name" class="form-title">Your Name</label>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
+                </div>
+                <div class="form-item">
+                    <label for="email" class="form-title">Your Email</label>
+                    <input type="email" class="form-control" name="email" size="50" id="email"
+                        placeholder="Enter your Email" />
+                </div>
+                <div class="form-item">
+                    <label for="phone" class="form-title">Your Phone</label>
+                    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter your Phone" />
+                </div>
+                <div class="form-item">
+                    <label for="password" class="form-title">Your Password</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                        placeholder="Enter your Password" />
+                </div>
+                <div class="form-item">
+                    <label for="confirm" class="form-title">Confirm Password</label>
+                    <input type="password" class="form-control" name="confirm" id="confirmPass"
+                        placeholder="Confirm your Password" />
+                </div>
+                <div class="form-item">
+                    <div id="errorMessage"></div>
+                    <button type="submit" onclick="check();" class="register" id="register">Register</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function check() {
+            let name = document.getElementById("name");
+            let email = document.getElementById("email");
+            let phone = document.getElementById("phone");
+            let password = document.getElementById("password");
+            let confirmPass = document.getElementById("confirmPass");
+            let dog = email.value.indexOf("@");
+
+            document.getElementById('errorMessage')
+                .innerHTML = "";
+
+            if (name.value == '') {
+                document.getElementById('errorMessage')
+                    .innerHTML = "Enter your Name please </br>";
+            }
+
+            if (email.value == '') {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Enter your Email please </br>";
+            }
+
+            if (dog == -1) {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Email entered incorrectly </br>";
+            }
+
+            if (phone.value == '') {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Enter your Phone please </br>";
+            }
+
+            if (password.value == '') {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Enter your Password please </br>";
+            }
+
+            if (password.value.length <= 6) {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Password should be more than 6 characters </br>";
+            }
+
+            if (confirmPass.value == '') {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Confirm your Password please </br>";
+            }
+
+            if (password.value == confirmPass.value) {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Passwords match. </br>";
+            } else {
+                document.getElementById('errorMessage')
+                    .innerHTML += "Passwords do not match! </br>";
+            }
+            form-item.submit();
+            alert(`Добро пожаловать, ${name}!`)
+        };
+
+        
+    </script>
+</body>
+
+</html>
