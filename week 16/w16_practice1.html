@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .button {
+            margin: 200px 70px 50px 70px;
+            padding: 20px 10px 20px 10px;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            background-color: rgb(53, 180, 138);
+            color: rgb(246, 241, 235);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.21);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="button" onclick="sumInput()"> Нажми меня, чтобы ввеcти данные </button>
+    </div>
+    <script>
+        function sumInput() {
+            let arr = [];
+            let sum = 0;
+            while (true) {
+                let askNum = prompt('Введите число', 0);
+                if (askNum === '' || askNum === null || !isFinite(askNum)) break;
+                arr.push(+askNum);
+            }
+
+            let sortNumbers = arr.sort((a, b) => a - b);
+
+            alert(`Отсортировано по возрастанию: ${sortNumbers}`);
+
+            for (let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+
+            alert(`Сумма равна ${sum}.`);
+        }
+    </script>
+</body>
+
+</html>

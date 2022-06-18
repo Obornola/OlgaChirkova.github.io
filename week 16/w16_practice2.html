@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        h1 {
+            color: rgb(81, 77, 77);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(235, 234, 234);
+        }
+
+        .selection {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        /* .calculator-form {
+            display: block;
+            
+        } */
+
+        .selection__item {
+            width: 30%;
+            padding: 0 5px;
+            /* display: inline-flex; */
+            
+        }
+
+        .form-select {
+            min-width: 200px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px 6px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21);
+            font-size: 18px;
+        }
+
+        .item {
+            margin-bottom: 15px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Калькулятор расчёта стоимости автомобиля</h1>
+            <div class="box">
+                <h4>Узнайте стоимость Вашего автомобиля всего за 1 минуту.</h4>
+                <form action="#" class="calculator-form" id="calculator-form">
+                    <div class="selection">
+                        <div class="selection__item">
+                            <div class="item">
+                                <select id="brand" class="form-select">
+                                    <option value="" selected>Марка</option>
+                                    <option value="10000">Kia</option>
+                                    <option value="20000">Mazda</option>
+                                    <option value="30000">Volvo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection__item">
+                            <div class="item">
+                                <select id="model" class="form-select" disabled>
+                                    <option value="" selected>Модель</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="selection__item">
+                            <div class="item">
+                                <select class="form-select" id="year" disabled>
+                                    <option value="" selected>Год выпуска</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="w16_practice2.js"></script>
+</body>
+
+</html>
