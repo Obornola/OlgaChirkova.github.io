@@ -126,37 +126,28 @@
             let password = document.getElementById("password");
             let confirmPass = document.getElementById("confirmPass");
             let dog = email.value.indexOf("@");
-            let message = document.getElementById('errorMessage')
-                .innerHTML;
-            document.getElementById('errorMessage')
-                .innerHTML = "";
+            let message = document.getElementById('errorMessage');
+            message.innerHTML = "";
 
             if (name.value === '') {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Enter your Name please </br>";
+                message.innerHTML += "Enter your Name please </br>";
             } else if (email.value === '') {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Enter your Email please </br>";
+                message.innerHTML += "Enter your Email please </br>";
             } else if (dog === -1) {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Email entered incorrectly </br>";
+                message.innerHTML += "Email entered incorrectly </br>";
             } else if (phone.value === '') {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Enter your Phone please </br>";
+                message.innerHTML += "Enter your Phone please </br>";
             } else if (password.value === '') {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Enter your Password please </br>";
+                message.innerHTML += "Enter your Password please </br>";
             } else if (password.value.length <= 6) {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Password should be more than 6 characters </br>";
+                message.innerHTML += "Password should be more than 6 characters </br>";
             } else if (confirmPass.value === '') {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Confirm your Password please </br>";
+                message.innerHTML += "Confirm your Password please </br>";
             } else if (password.value !== confirmPass.value) {
-                document.getElementById('errorMessage')
-                    .innerHTML += "Passwords do not match! </br>";
+                message.innerHTML += "Passwords do not match! </br>";
             } else {
-                message === "" && alert(`Добро пожаловать, ${name.value}!`);
+                message.innerHTML = "" && alert(`Добро пожаловать, ${name.value}!`);
+
             }
         };
     </script>
