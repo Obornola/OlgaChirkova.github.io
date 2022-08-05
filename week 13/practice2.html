@@ -6,43 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практическое задание 2</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 20px 15px;
+        }
+
+        .btn {
+            margin: 30px 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px 6px;
+            background-color: rgb(197, 152, 238);
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 31%);
+        }
+    </style>
 </head>
 
 <body>
-    <button onclick="calcSum()">+</button>
-    <button onclick="calcSubtraction()">-</button>
-    <button onclick="calcMultiplication()">*</button>
-    <button onclick="calcDivision()">/</button>
+    <div class="wrapper">
+        <div class="container">
+            <button class="btn" onclick="calcSum()">+</button>
+            <button class="btn" onclick="calcSubtraction()">-</button>
+            <button class="btn" onclick="calcMultiplication()">*</button>
+            <button class="btn" onclick="calcDivision()">/</button>
+        </div>
+    </div>
 
     <script>
         function calcSum() {
-            let a = prompt('Задайте значение a');
-            let b = prompt('задайте значение b')
+            let a = prompt('Введите первое число');
+            let b = prompt('Введите второе число')
             let sum = +a + +b;
-            alert(`Результат ${sum}`);
+            alert(`Сумма равна ${sum}`);
         };
 
         function calcSubtraction() {
-            let a = prompt('Задайте значение a');
-            let b = prompt('задайте значение b')
+            let a = prompt('Введите первое число');
+            let b = prompt('Введите второе число')
             let subtraction = +a - +b;
-            alert(`Результат ${subtraction}`);
+            alert(`Разность равна ${subtraction}`);
         };
-        
+
         function calcMultiplication() {
-            let a = prompt('Задайте значение a');
-            let b = prompt('задайте значение b')
+            let a = prompt('Введите первое число');
+            let b = prompt('Введите второе число')
             let мultiplication = +(a * b);
-            alert(`Результат ${мultiplication}`);
+            alert(`Произведение равно ${мultiplication}`);
         };
 
         function calcDivision() {
-            let a = prompt('Задайте значение a');
-            let b = prompt('задайте значение b')
+            let a = prompt('Введите первое число');
+            let b = prompt('Введите второе число')
             let division = +(a / b);
-            alert(`Результат ${division}`);
+            alert(`Частное равно ${division}`);
         };
-
     </script>
 </body>
 

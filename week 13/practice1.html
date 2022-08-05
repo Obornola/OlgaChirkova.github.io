@@ -6,16 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Практическое задание 1</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 20px 15px;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px 6px;
+            background-color: rgb(197, 152, 238);
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 31%);
+        }
+    </style>
 </head>
 
 <body>
-
-    <button onclick="showMessage();"> Как тебя зовут ? </button>
+    <div class="wrapper">
+        <div class="container">
+            <button class="btn" onclick="showMessage();"> Как тебя зовут ? </button>
+        </div>
+    </div>
 
     <script>
         function showMessage() {
             name = prompt(`Как тебя зовут?`);
-            alert(`Привет ${name}!`);
+            alert(`Привет, ${name}!`);
         }
     </script>
 </body>
