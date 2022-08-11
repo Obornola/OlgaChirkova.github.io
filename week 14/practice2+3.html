@@ -24,6 +24,7 @@
         .boxes,
         .gallery {
             display: inline-flex;
+            margin-top: 10px;
             justify-content: center;
             align-items: center;
         }
@@ -43,6 +44,7 @@
 
         .one__box {
             background-color: yellow;
+            cursor: pointer;
         }
 
         .selected-one {
@@ -51,6 +53,7 @@
 
         .two__box {
             background-color: green;
+            cursor: pointer;
         }
 
         .selected-two {
@@ -59,6 +62,7 @@
 
         .three__box {
             background-color: turquoise;
+            cursor: pointer;
         }
 
         .selected-three {
@@ -68,18 +72,22 @@
         .arrow-left,
         .image,
         .arrow-right {
+            padding: 0 10px 0 10px;
             display: flex;
             justify-content: center;
         }
 
         .arrow-left__img,
         .arrow-right__img {
-            width: 40%;
-            height: 40%;
+            width: 50px;
+            height: 50px;
             object-fit: contain;
+            cursor: pointer;
         }
 
         .image__img {
+            width: 700px;
+            height: 400px;
             object-fit: contain;
         }
     </style>
@@ -90,50 +98,48 @@
         <div class="container">
             <h2>Задание 2</h2>
             <div class="boxes">
-                <div class="one__box" onclick="select1(this)"></div>
-                <div class="two__box" onclick="select2(this)"></div>
-                <div class="three__box" onclick="select3(this)"></div>
+                <div class="one__box" onclick="yellow(this)"></div>
+                <div class="two__box" onclick="green(this)"></div>
+                <div class="three__box" onclick="turquoise(this)"></div>
             </div>
             <h2>Задание 3</h2>
             <div class="gallery">
                 <div class="arrow-left">
-                    <img class="arrow-left__img" src="https://cdn-icons-png.flaticon.com/512/507/507257.png" id="left"
-                        onclick="ChangeMe()" alt="arrow-left">
+                    <img class="arrow-left__img" src="left.png" id="left" onclick="Left()" alt="arrow-left">
                 </div>
                 <div class="image">
                     <img class="image__img" src="https://frazy.su/wp-content/uploads/2016/02/vesna-karpat1.jpg"
                         id="spring" alt="spring-img">
                 </div>
                 <div class="arrow-right">
-                    <img class="arrow-right__img" src="https://cdn-icons-png.flaticon.com/512/271/271226.png" id="right"
-                        onclick="ChangeMe1()" alt="arrow-right">
+                    <img class="arrow-right__img" src="right.png" id="right" onclick="Right()" alt="arrow-right">
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        function select1(sender) {
+        function yellow(sender) {
             sender.classList.add("selected-one");
         }
 
-        function select2(sender) {
+        function green(sender) {
             sender.classList.add("selected-two");
         }
 
-        function select3(sender) {
+        function turquoise(sender) {
             sender.classList.add("selected-three");
         }
 
-        function ChangeMe() {
+        function Left() {
             let springImage = document.getElementById('spring');
             springImage.src = "https://valenteshop.ru/uploads/6794c331b1246a8febd68a588edd74e3.jpg";
         }
 
-        function ChangeMe1() {
+        function Right() {
             let springImage = document.getElementById('spring');
             springImage.src =
-                "https://www.inform.zp.ua/wp-content/uploads/2020/03/88126084_1145416369154652_910432014761459712_o.jpg";
+                "https://media.istockphoto.com/photos/yamazakura-picture-id811211454?s=612x612";
         }
     </script>
 </body>
