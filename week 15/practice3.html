@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическое задание 3</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+        }
+
+        .label {
+            margin-right: 20px;
+            display: flex;
+            align-self: center;
+        }
+
+        .select {
+            width: 200px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px 6px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="label">
+                <label for="select">Тема</label>
+            </div>
+            <select id="select" onchange="themeChange()" class="select">
+                <option value="">Без темы</option>
+                <option value="grey">Серая</option>
+                <option value="blue">Синяя</option>
+                <option value="red">Красная</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        function themeChange() {
+            let selectBackground = document.getElementById('select').value;
+            document.body.style.backgroundColor = selectBackground;
+
+        }
+    </script>
+</body>
+
+</html>
