@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дата</title>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(197, 219, 219);
+        }
+
+        .container {
+            /* max-width: 1176px; */
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+        }
+
+        .btn {
+            width: 100px;
+            height: 30px;
+            margin-right: 15px;
+            border-radius: 6px 6px;
+            border: none;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.21);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <button class="btn" id="btn-date-now">Дата 1</button>
+            <button class="btn" id="btn-sec-ago">Дата 2</button>
+            <button class="btn" id="btn-min-ago">Дата 3</button>
+            <button class="btn" id="btn-full-date">Дата 4</button>
+        </div>
+    </div>
+
+    <script>
+        let btnDateNow = document.querySelector("#btn-date-now");
+        let btnSecAgo = document.querySelector("#btn-sec-ago");
+        let btnMinAgo = document.querySelector("#btn-min-ago");
+        let btnFullDate = document.querySelector("#btn-full-date");
+
+        btnDateNow.onclick = function () {
+            alert(formatDate(new Date(new Date - 1)));
+        }
+
+        btnSecAgo.onclick = function () {
+            alert(formatDate(new Date(new Date - 30 * 1000)));
+        }
+
+        btnMinAgo.onclick = function () {
+            alert(formatDate(new Date(new Date - 5 * 60 * 1000)));
+        }
+
+        btnFullDate.onclick = function () {
+            alert(formatDate(new Date(new Date - 86400 * 1 * 1000)));
+        }
+
+        function formatDate(date) {
+
+            date = new Date(date);
+            let now = new Date;
+            let diff = now - date;
+
+            let day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let hour = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
+            let minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+
+            month = month < 10 ? `0${month}` : month;
+
+            if (diff < 1000) {
+                return 'прямо сейчас';
+            }
+
+            if (diff < 1000 * 60) {
+                return `${Math.floor(diff / 1000)} сек. назад`;
+            }
+
+            if (diff < 1000 * 3600) {
+                return `${Math.floor(diff / 1000 / 60)} мин. назад`;
+            }
+
+            return `${day}.${month}.${year} ${hour}:${minutes}`
+        }
+    </script>
+</body>
+
+</html>

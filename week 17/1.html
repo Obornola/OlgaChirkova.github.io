@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(197, 219, 219);
+        }
+
+        .container {
+            /* max-width: 1176px; */
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+
+        }
+
+        .enter-name {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            width: 500px;
+            height: 25px;
+            margin-top: 20px;
+            border-radius: 6px 6px;
+            border: none;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.21);
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin-top: 20px;
+            border-radius: 6px 6px;
+            border: none;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.21);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="enter-name">
+                <input type="text" class="fullname" name="fullname" id="fullname" placeholder="Введите ФИО" />
+                <button id="btn">Ввод данных</button>
+                <input type="text" class="surname" name="surname" id="surname" placeholder="Фамилия" />
+                <input type="text" class="name" name="name" id="name" placeholder="Имя" />
+                <input type="text" class="patronymic" name="patronymic" id="patronymic" placeholder="Отчество" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const fullName = document.querySelector("#fullname");
+        const surName = document.querySelector("#surname");
+        const name = document.querySelector("#name");
+        const patronymic = document.querySelector("#patronymic");
+
+        const enterButton = document.querySelector("#btn");
+
+
+
+        function enterName() {
+            let arrFullName = [];
+
+            let strFullName = fullName.value.trim();
+
+            strFullName = strFullName.split(' ').filter(function (n) {
+                return n != ''
+            });
+
+            for (let elem of strFullName) {
+                elem = elem.toLowerCase();
+                elem = elem[0].toUpperCase() + elem.substring(1);
+                arrFullName.push(elem);
+            }
+
+            surName.value = arrFullName[0];
+            name.value = arrFullName[1];
+            patronymic.value = arrFullName[2];
+
+        }
+
+        enterButton.addEventListener("click", enterName);
+    </script>
+</body>
+
+</html>
