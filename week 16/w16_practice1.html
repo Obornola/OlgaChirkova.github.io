@@ -77,50 +77,53 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            const askNum = document.querySelector('.input');
-            const buttonMore = document.querySelector('.btn-more');
-            const buttonResult = document.querySelector('.btn');
-            const numbers = document.querySelector('.numbers');
+            const askNum = document.querySelector('#input');
+            const buttonMore = document.querySelector('#btn-more');
+            const buttonResult = document.querySelector('#btn');
+            const showNumbers = document.querySelector('.numbers');
 
-            let arr = [];
+            let arrNum = [];
 
             function askMore() {
-                arr.push(askNum.value);
-                numbers.innerHTML = arr;
+                let number = Number(askNum.value);
+
+                if (Number.isNaN(number)) {
+                    return;
+                } else {
+                    arrNum.push(askNum.value);
+                    askNum.value = "";
+                    showArrNum();
+                    alert(`Введите следующее значение`);
+                }
+            }
+
+            function showArrNum() {
+                showNumbers.innerHTML = "";
+
+                for (let num of arrNum) {
+                    showNumbers.innerHTML += num + " ";
+                }
+            }
+
+            function sumInput() {
+                let sum = 0;
+
+                for (let i = 0; i < arrNum.length; i++) {
+                sum += Number(arrNum[i]);
+            }
+
+                let resultSum = document.querySelector('#result-sum');
+                resultSum.value = sum;
+
+                let sortNumbers = arrNum.sort((a, b) => a - b);
+                let resultSort = document.querySelector('#result-sort');
+                resultSort.value = sortNumbers;
 
             }
 
             buttonMore.addEventListener('click', askMore);
 
-
-            // function sumInput() {
-
-            //     let sum = "";
-
-            
-            
-
-            //     let sortNumbers = arr.sort((a, b) => a - b);
-            //     let resultSort = document.querySelector('.result-sort');
-            //     resultSort.value = sortNumbers;
-            //     // alert(`Отсортировано по возрастанию: ${sortNumbers}`);
-
-            //     for (let i = 0; i < arr.length; i++) {
-            //         let sum = arr[i];
-            //     }
-
-            //     let resultSum = document.querySelector('.result-sum');
-            //     resultSum.value = sum;
-            //     // alert(`Сумма равна ${sum}.`);
-            // }
-
-
-
-
-
-
-
-            // buttonResult.addEventListener('click', sumInput);
+            buttonResult.addEventListener('click', sumInput);
         })
     </script>
 </body>
