@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment</title>
+    <style>
+        .wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: rgb(197, 219, 219);
+        }
+
+        .container {
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 6px 6px;
+            background-color: rgb(173, 204, 231);
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.21);
+        }
+
+        .comments {
+            width: 450px;
+            height: 350px;
+            margin: 15px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            border-radius: 6px 6px;
+            background-color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .comment-add {
+            margin-top: 8px;
+        }
+
+        hr {
+            width: 440px;
+            border: none;
+            background-color: rgb(204, 189, 189);
+            color: rgb(204, 189, 189);
+            height: 1px;
+        }
+
+        .btn {
+            width: 30vw;
+            margin: 7px 0 7px 0;
+            padding: 5px 15px;
+            border-radius: 6px 6px;
+            border: none;
+            box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.21);
+            cursor: pointer;
+            background-color: rgb(238, 160, 44);
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="box">
+                <div class="comments"></div>
+                <textarea class="textarea" cols="58" rows="3"></textarea>
+                <button class="btn">Добавить комментарий</button>
+            </div>
+        </div>
+    </div>
+    <script src="2.js"></script>
+</body>
+
+</html>
