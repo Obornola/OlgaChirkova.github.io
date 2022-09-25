@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическое задание 1</title>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 50px 15px;
+            display: flex;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px;
+        }
+
+        .value-input {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+        }
+
+        .item {
+            margin: 10px;
+        }
+
+        .text {
+            height: 25px;
+            width: 200px;
+            border-radius: 6px 6px;
+        }
+
+        .calculation {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-self: center;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 6px 6px;
+            background-color: rgb(197, 152, 238);
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0px 3px 5px 0px rgb(0 0 0 / 31%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="value-input">
+                <label class="item">Задайте первое число:
+                    <input id="num_a" type="text" class="text"> </label>
+                <label class="item">Задайте второе число:
+                    <input id="num_b" type="text" class="text"> </label>
+                <label class="item">Результат вычисления:
+                    <input id="result" type="text" class="text"> </input></label>
+            </div>
+            <div class="calculation">
+                <button class="sum">+</button>
+                <button class="subtraction">-</button>
+                <button class="multiplication">*</button>
+                <button class="division">/</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="3_w19.js"></script>
+</body>
+
+</html>

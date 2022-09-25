@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        div {
+            margin-top: 10px;
+        }
+
+        fieldset {
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: rgb(207, 152, 71);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1176px;
+            margin: 0px auto;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .image {
+            width: 60%;
+            object-fit: contain;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .form {
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: start;
+        }
+
+        .form-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+        }
+
+        span {
+            color: red;
+        }
+
+        .note {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        .input {
+            width: 300px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid #ccc;
+        }
+
+        .input__age {
+            width: 100px;
+            padding: 12px 12px 12px 12px;
+            border: 1px solid #ccc;
+        }
+
+        input:required:valid {
+            border: 2px solid rgb(44, 195, 44);
+        }
+
+        button {
+            width: 20%;
+            margin-top: 30px;
+            padding: 10px 20px 10px 20px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 6px 6px;
+            background-color: rgb(207, 152, 71);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h1>Опросник для любителей кошек</h1>
+            <div class="image"><img src="https://kot-pes.com/wp-content/uploads/2019/03/post_5c87ae6234379.jpg"
+                    alt="Котики"></div>
+            <form action="#" class="form">
+                <div>
+                    <label for="nickname">Кличка питомца</label>
+                    <input type="text" id="nickname" class="input" required autofocus /><span> *</span></div>
+                <div>
+                    <label for="age">Возраст питомца</label>
+                    <input type="number" min="1" max="30" id="age" class="input__age" /> лет</div>
+                <fieldset>
+                    <legend>Контактная информация владельца:</legend>
+                    <div>
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" class="input" required /><span> *</span></div>
+                    <div>
+                        <label for="phone">Номер телефона</label>
+                        <input type="tel" id="phone" class="input" placeholder="+7 (123) 456-78-90"
+                            pattern="\+?[0-9\s\-\(\)]+" minlength="10" maxlength="20" required /><span> *</span></div>
+                    <div>
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" class="input" /></div>
+                </fieldset>
+                <div>
+                    <label for="breed">Порода</label>
+                    <select name="breed" id="breed" class="input">
+                        <option value="">Выберите породу</option>
+                        <option value="Экзотическая кошка">Экзотическая кошка</option>
+                        <option value="Персидская кошка">Персидская кошка</option>
+                        <option value="Мейн-кун">Мейн-кун</option>
+                        <option value="Рэгдолл">Рэгдолл</option>
+                        <option value="Британская короткошёрстная">Британская короткошёрстная</option>
+                        <option value="Американская короткошёрстная">Американская короткошёрстная</option>
+                        <option value="Шотландская вислоухая">Шотландская вислоухая</option>
+                        <option value="Абиссинская кошка">Абиссинская кошка</option>
+                        <option value="Канадский сфинкс">Канадский сфинкс</option>
+                        <option value="Ориентальная кошка">Ориентальная кошка</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="own-breed">Свой вариант</label>
+                    <input type="text" id="own-breed" class="input" /></div>
+                <fieldset>
+                    <legend>Какой корм предпочитает:</legend>
+                    <div><label for="dry">сухой</label>
+                        <input type="checkbox" class="feed" value="сухой" /></div>
+                    <div><label for="wet">влажный</label>
+                        <input type="checkbox" class="feed" value="влажный" /></div>
+                    <div><label for="natural">натуральный</label>
+                        <input type="checkbox" class="feed" value="натуральный" /></div>
+                </fieldset>
+                <fieldset>
+                    <legend>Выберите пол:</legend>
+                    <label for="female">Самка</label>
+                    <input type="radio" id="female" name="gender" value="самка" checked />
+                    <label for="male">Самец</label>
+                    <input type="radio" id="male" name="gender" value="самец"/>
+                </fieldset>
+                <div>
+                    <label for="comment">Комментарий владельца:</label>
+                    <textarea type="comment" id="comment" class="input" cols="5" rows="3"></textarea><span> *</span>
+                    <div class="form-item">
+                        <label for="photo">Прикрепите фото питомца</label>
+                        <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png"/>
+                        <span class="note"> * — поля, обязательные для заполнения.</span>
+                        <button type="submit" class="button">Сохранить</button></div>
+                </div>
+            </form>
+        </div>
+        <script src="2_w19.js"></script>
+</body>
+
+</html>
