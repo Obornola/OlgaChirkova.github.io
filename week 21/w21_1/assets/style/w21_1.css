@@ -1,0 +1,120 @@
+* {
+    border: 2px solid #d87093;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: pink;
+    color: #848282;
+}
+
+.animate-ul {
+    display: flex;
+    font-family: fantasy;
+}
+
+.animate-ul li {
+    list-style: none;
+    letter-spacing: 15px;
+    font-size: 5em;
+
+    color: #df42da;
+    animation: ani 1.2s linear infinite;
+}
+
+.animate-ul li:nth-child(1) {
+    animation-delay: .2s
+}
+
+.animate-ul li:nth-child(2) {
+    animation-delay: .6s
+}
+
+.animate-ul li:nth-child(3) {
+    animation-delay: .8s
+}
+
+.animate-ul li:nth-child(4) {
+    animation-delay: 1s
+}
+
+.animate-ul li:nth-child(5) {
+    animation-delay: 1.4s
+}
+
+.animate-ul li:nth-child(6) {
+    animation-delay: 1.8s
+}
+
+.animate-ul li:nth-child(7) {
+    animation-delay: 1.12s
+}
+
+@keyframes ani {
+    100% {
+        color: #ff0088;
+        text-shadow: 0 0 7px #ff0088, 0 0 70px #ff0088
+    }
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-top: 5%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-gif {
+    border: 2px solid #df42da;
+    border-radius: 3px;
+    background: #f2c8cf !important;
+    outline: none;
+    height: 30px;
+    min-width: 500px;
+    color: #d87093;
+}
+
+.search-gif:focus {
+    color: #ff0088;
+    border: 2px solid #ff0088;
+  }
+
+  .btn {
+    min-width: 100px;
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #df42da;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: #ff0088;
+  }
+  
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #ff0088;
+  }
+
+  /* .giffs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  } */
+
+  .item {
+    /* min-height: 200px;
+    min-width: 200px; */
+    margin: 15px 15px 0 0;
+  }
