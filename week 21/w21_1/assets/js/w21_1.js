@@ -17,14 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(response => {
                 const giffs = response.data;
+                giffsWrapper.innerHTML = "";
                 for (i in giffs) {
-                    console.log(giffs[i]);
-                    giffsWrapper.innerHTML = "";
                     giffsWrapper.innerHTML += `
                     <div class="item">
-                        <img src=${giffs[i].url} alt="img">
+                        <img src=${giffs[i].images.original.url} alt="${giffs[i].title}">
                     </div>`;
-                    console.log(giffs[i].url);
                 }
             })
             .catch(err => console.log(err))
