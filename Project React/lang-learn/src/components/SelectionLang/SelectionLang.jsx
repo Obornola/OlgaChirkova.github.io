@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import style from './selectionLang.module.scss';
 
 function SelectionLang() {
   return (
-    <div>
-      
+    <div className={style.container}>
+      SelectionLang
     </div>
-  )
+  );
 }
 
-export default SelectionLang
+export default SelectionLang;

@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import style from './cardItem.module.scss';
 
 function CardItem() {
   return (
-    <div>
-      
+    <div className={style.container}>
+      CardItem
     </div>
-  )
+  );
 }
 
-export default CardItem
+export default CardItem;

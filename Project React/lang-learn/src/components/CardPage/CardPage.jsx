@@ -9,11 +9,13 @@ import Timer from '../Timer/Timer.jsx';
 import Button from '../Button/Button.jsx';
 import Footer from '../Footer/Footer.jsx';
 import Navbar from '../Navbar/Navbar.jsx';
-import './style/App.css';
+import '../app/app.module.scss';
+
+import style from './cardPage.module.scss';
 
 function CardPage() {
   return (
-    <div className='cardPage'>
+    <div className={style.container}>
       <Header>
         <Search/>
         <LogIn/>
@@ -28,7 +30,7 @@ function CardPage() {
         <Navbar/>
       </Footer>
     </div>
-  )
+  );
 }
 
-export default CardPage
+export default CardPage;

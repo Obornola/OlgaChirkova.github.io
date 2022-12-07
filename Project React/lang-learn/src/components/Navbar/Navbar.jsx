@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import style from './navBar.module.scss';
 
-function Navbar() {
+function NavBar() {
   return (
-    <div>
-      
+    <div className={style.container}>
+      Navbar
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default NavBar;

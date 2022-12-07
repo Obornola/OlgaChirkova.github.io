@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import SelectionLang from '../SelectionLang/SelectionLang.jsx';
+import DescriptionTask from '../DescriptionTask/DescriptionTask.jsx';
+import style from './main.module.scss';
 
 function Main() {
   return (
-    <div>
-      
+    <div className={style.container}>
+      <SelectionLang/>
+      <DescriptionTask/>
     </div>
-  )
+  );
 }
 
-export default Main
+export default Main;

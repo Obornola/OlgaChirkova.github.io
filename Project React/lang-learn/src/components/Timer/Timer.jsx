@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import style from './timer.module.scss';
 
 function Timer() {
   return (
-    <div>
-      
+    <div className={style.container}>
+      Timer
     </div>
-  )
+  );
 }
 
-export default Timer
+export default Timer;

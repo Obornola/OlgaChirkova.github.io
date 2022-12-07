@@ -1,0 +1,9 @@
+@import '../app/app.module.scss';
+@import '../../style/vars.scss';
+
+.container{
+    @include flexPart(row, center);
+    height: 15vh;
+    background-color: $darkBlue;
+    color: $lightFontColor;
+}
