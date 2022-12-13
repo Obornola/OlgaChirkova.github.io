@@ -1,0 +1,20 @@
+@import '../../style/vars.scss';
+
+.container {
+    display: flex;
+    margin-left: 50vw;
+    font-size: 18px;
+
+    a {
+        color: $lightFontColor;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a:active {
+        color: $lightBlue;
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../style/vars.scss';
+
+.container {
+    @include flexPart(column, flex-start);
+    justify-content: flex-start;
+    margin: 10px 30px;
+    width: 100vw;
+
+    .table {
+
+        display: inline-grid;
+        grid-template-columns: 1fr 3fr 4fr 3fr 4fr;
+        grid-template-rows: 1fr;
+    }
+}

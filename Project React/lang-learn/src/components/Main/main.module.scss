@@ -3,7 +3,9 @@
 
 .container{
     @include flexPart(column, flex-start);
+    justify-content: flex-start;
     height: 65vh;
+    width: 100%;
     background-color: $lightBlue;
     color: $darkFontColor;
 }

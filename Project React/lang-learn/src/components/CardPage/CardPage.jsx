@@ -14,23 +14,23 @@ import '../app/app.module.scss';
 import style from './cardPage.module.scss';
 
 function CardPage() {
-  return (
-    <div className={style.container}>
-      <Header>
-        <Search/>
-        <LogIn/>
-      </Header>
-      <Main>
-        <Help/>
-        <CardItem/>
-        <Timer/>
-        <Button/>
-      </Main>
-      <Footer>
-        <Navbar/>
-      </Footer>
-    </div>
-  );
+return (
+<div className={style.container}>
+  <Header>
+    <Search />
+    <LogIn />
+  </Header>
+  <Main>
+    <Help />
+    <CardItem />
+    <Timer />
+    <Button />
+  </Main>
+  <Footer>
+    <Navbar />
+  </Footer>
+</div>
+);
 }
 
 export default CardPage;

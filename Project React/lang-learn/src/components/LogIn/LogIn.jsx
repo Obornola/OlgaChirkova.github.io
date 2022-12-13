@@ -4,7 +4,7 @@ import style from './logIn.module.scss';
 function LogIn() {
   return (
     <div className={style.container}>
-      LogIn
+      <a href='#'>Войти</a>
     </div>
   );
 }

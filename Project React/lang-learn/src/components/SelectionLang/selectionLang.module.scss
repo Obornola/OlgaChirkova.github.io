@@ -1,0 +1,64 @@
+@import '../../style/vars.scss';
+
+.container {
+    @include flexPart(row, center);
+    justify-content: center;
+    height: 20vh;
+
+
+    .dropDownList {
+        position: relative;
+    }
+
+    label {
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    select {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        font-size: 20px;
+        padding: 8px 80px 8px 20px;
+        background-color: rgb(216, 216, 244);
+        color: $darkFontColor;
+        border: 2px solid $darkBlue;
+        border-radius: 5px;
+    }
+
+    .selectArrow {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        background-color: $darkBlue;
+        height: 100%;
+        width: 30px;
+        pointer-events: none;
+        border-radius: 0 5px 5px 0;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &::before {
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid rgba(216, 216, 244, 0.7);
+            top: 63%;
+        }
+
+        &::after {
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid rgba(216, 216, 244, 0.7);
+            top: 38%;
+        }
+    }
+
+}
