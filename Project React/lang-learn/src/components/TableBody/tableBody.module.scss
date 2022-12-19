@@ -1,0 +1,72 @@
+@import '../../style/vars.scss';
+
+.tableBody {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+    grid-template-rows: 2.5rem;
+    background-color: $backgroundTable;
+
+    .columnNumber,
+    .columnLanguage,
+    .columnTranscription,
+    .columnRussian {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $darkBlue;
+        border-right-style: none;
+        border-top: none;
+    }
+
+    .columnEdit:last-child {
+        border: 2px solid $darkBlue;
+        border-top: none;
+    }
+
+    .columnEdit {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        button {
+            padding: 5px 6px 7px;
+            border-radius: 9px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        
+            svg {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+        
+                path {
+                    stroke: $darkBlue;
+                }
+            }
+        
+            &.btnEdit {
+                background-color: rgb(84, 176, 84);
+            }
+        
+            &.btnEdit:hover {
+                background-color: rgb(36, 214, 66);
+            }
+        
+            &.btnSave {
+                background-color: rgb(87, 87, 203);
+            }
+        
+            &.btnSave:hover {
+                background-color: rgb(77, 137, 233);
+            }
+        
+            &.btnDelete {
+                background-color: rgb(226, 45, 45);
+            }
+        
+            &.btnDelete:hover {
+                background-color: rgb(244, 111, 111);
+            }
+        }
+    }
+}

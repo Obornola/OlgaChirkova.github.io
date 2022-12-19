@@ -1,0 +1,42 @@
+@import '../../style/vars.scss';
+
+.container {
+    @include flexPart(column, flex-start);
+    justify-content: flex-start;
+    padding: 10px 40px;
+    width: 100%;
+
+    h3 {
+        margin-left: 100px;
+    }
+
+    .table {
+        margin-top: 20px;
+        width: 90%;
+        align-self: center;
+
+        .tableHead {
+            display: grid;
+            grid-template-columns: 1fr 3fr 3fr 3fr 3fr;
+            grid-template-rows: 3rem;
+            align-items: center;
+            text-align: center;
+            background-color: $darkBlue;
+            color: $lightFontColor;
+            text-transform: uppercase;
+
+
+            .columnNumber,
+            .columnLanguage,
+            .columnTranscription,
+            .columnRussian {
+                border: 2px solid $darkBlue;
+                border-right-color: $lightBlue;
+            }
+
+            .columnEdit:last-child {
+                border: 2px solid $darkBlue;
+            }
+        }
+    }
+}
