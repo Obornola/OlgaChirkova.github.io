@@ -8,10 +8,12 @@
     <title>Калькулятор</title>
     <style>
         * {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            box-sizing: border-box;
         }
 
-        h1 {
+        h1,
+        h4 {
+            margin: 10px 0 20px 0;
             color: rgb(81, 77, 77);
         }
 
@@ -28,31 +30,26 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
         }
 
         .box {
+            padding: 20px 20px;
             display: flex;
             flex-direction: column;
             background-color: rgb(235, 234, 234);
             border-radius: 6px 6px;
         }
 
-        .selection {
+        .selection,
+        .range {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
-        /* .calculator-form {
-            display: block;
-            
-        } */
-
         .selection__item {
-            width: 30%;
-            padding: 0 5px;
-            /* display: inline-flex; */
-            
+            width: 45%;
         }
 
         .form-select {
@@ -62,11 +59,50 @@
             border-radius: 6px 6px;
             box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21);
             font-size: 18px;
+            cursor: pointer;
         }
 
         .item {
             margin-bottom: 15px;
-            
+            /* display: flex;
+            justify-content: center; */
+        }
+
+        .range__item {
+            height: 40px;
+            width: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        .range__item input {
+            height: 10px;
+            width: 100%;
+            margin-right: 20px;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .range__value {
+            width: 20%;
+            display: flex;
+            font-size: 17px;
+            font-weight: 650;
+            color: rgb(81, 77, 77);
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 10px 20px 10px 20px;
+            float: right;
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 6px 6px;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21);
+            font-size: 18px;
         }
     </style>
 </head>
@@ -77,33 +113,100 @@
             <h1>Калькулятор расчёта стоимости автомобиля</h1>
             <div class="box">
                 <h4>Узнайте стоимость Вашего автомобиля всего за 1 минуту.</h4>
-                <form action="#" class="calculator-form" id="calculator-form">
+                <form class="calculator-form" id="calculator-form">
                     <div class="selection">
                         <div class="selection__item">
                             <div class="item">
                                 <select id="brand" class="form-select">
                                     <option value="" selected>Марка</option>
-                                    <option value="10000">Kia</option>
-                                    <option value="20000">Mazda</option>
-                                    <option value="30000">Volvo</option>
+                                    <option value="kia">Kia</option>
+                                    <option value="mazda">Mazda</option>
+                                    <option value="volvo">Volvo</option>
                                 </select>
                             </div>
                         </div>
                         <div class="selection__item">
                             <div class="item">
-                                <select id="model" class="form-select" disabled>
+                                <select id="model" class="form-select">
                                     <option value="" selected>Модель</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="selection__item">
+                        <!-- <div class="selection__item">
                             <div class="item">
-                                <select class="form-select" id="year" disabled>
-                                    <option value="" selected>Год выпуска</option>
+                                <select class="form-select" id="year" >
+                                    <option value="" selected>Возраст автомобиля</option>
+                                    <option value="4000">Меньше 3 лет</option>
+                                    <option value="3000">От 3 до 5 лет</option>
+                                    <option value="2000">От 5 до 7 лет</option>
+                                    <option value="1000">Больше 7 лет</option>
                                 </select>
                             </div>
+                        </div> -->
+                    </div>
+                    <div class="range">
+                        <h4>Возраст автомобиля</h4>
+                        <div class="range__item">
+                            <input type="range" id="year" min="0" max="20" value="0">
+                            <span class="range__value">0</span>
                         </div>
                     </div>
+                    <div>
+                        <h4>КПП</h4>
+                        <div class="item">
+                            <input type="radio" value="90" id="auto" name="gearbox" checked>
+                            <label for="auto">АКПП</label>
+                        </div>
+                        <div class="item">
+                            <input type="radio" value="20" id="mech" name="gearbox">
+                            <label for="mech">МКПП</label>
+                        </div>
+                        <div>
+                            <h4>Двигатель</h4>
+                            <div class="item">
+                                <input type="radio" value="1500" id="petrol" name="engine" checked>
+                                <label for="petrol">Бензиновый</label>
+                            </div>
+                            <div class="item">
+                                <input type="radio" value="1700" id="diesel" name="engine">
+                                <label for="diesel">Дизельный</label>
+                            </div>
+                            <div class="item">
+                                <input type="radio" value="2100" id="hybrid" name="engine">
+                                <label for="hybrid">Гибридный</label>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Дополнительное оборудование</h4>
+                            <div class="item">
+                                <input type="checkbox" value="10" id="lock">
+                                <label for="lock">Центральный замок с доступом «без ключа»</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" value="20" id="electric-heat">
+                                <label for="electric-heat">Лобовое стекло с электроподогревом</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" value="30" id="parking-sensors">
+                                <label for="parking-sensors">Парковочные датчики передние и задние</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" value="40" id="rear-cam">
+                                <label for="rear-cam">Камера заднего обзора</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" value="50" id="round-cam">
+                                <label for="round-cam">Камера кругового обзора</label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" value="60" id="hi-fi">
+                                <label for="hi-fi">Аудио система класса Hi-Fi</label>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <h4 id="result"></h4>
+                            <button class="btn">Рассчитать стоимость</button>
+                        </div>
                 </form>
 
             </div>
