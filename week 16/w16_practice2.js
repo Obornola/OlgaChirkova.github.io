@@ -1,162 +1,114 @@
-        const form = document.querySelector('form');
-        const result = document.querySelector('#result');
+    const brandSelect = document.querySelector('#brand');
+    const modelSelect = document.querySelector('#model');
+    const range = document.querySelector('#year');
+    const rangeValue = document.querySelector('.range__value');
+    const buttonResult = document.querySelector('.btn');
+    const result = document.querySelector('#result');
 
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
+    const kiaModels = ['Cerato', 'Optima', 'Picanto'];
+    const mazdaModels = ['Axela', 'Capella', 'CX-9'];
+    const volvoModels = ['C70', 'S60', 'V90'];
+    const kiaModelsPrice = [5000, 4500, 4000];
+    const mazdaModelsPrice = [10000, 9500, 9000];
+    const volvoModelsPrice = [55000, 14500, 14000];
 
-            const kiaModels = [
-                'Cerato', 'Optima', 'Picanto',
-            ];
-            const mazdaModels = [
-                'Axela', 'Capella', 'CX-9',
-            ];
-            const volvoModels = [
-                'C70', 'S60', 'V90',
-            ];
-            const kiaModelsPrice = [
-                5000, 4500, 4000,
-            ];
-            const mazdaModelsPrice = [
-                10000, 9500, 9000,
-            ];
-            const volvoModelsPrice = [
-                55000, 14500, 14000,
-            ];
+    let priceResult = [];
+    // let priceSelect;
+    // let yearPriceCoeff;
 
-            const brandSelect = document.querySelector('#brand');
-            brandSelect.addEventListener('change', modelsOption);
+    console.log('test');
 
-            function modelsOption(event) {
-                const brand = event.target.value;
-                const modelSelect = document.querySelector('#model');
+    console.log('test2');
 
-                let options = '';
-                let models = [];
-                let carPrice = [];
+    brandSelect.addEventListener('change', function (event) {
 
-                switch (brand) {
-                    case 'kia': {
-                        models = kiaModels;
-                        carPrice = kiaModelsPrice;
+        if (this.value) {
+            modelSelect.disabled = false;
+        }
 
-                        function priceOption() {
+        const brand = event.target.value;
+        console.log(brand);
 
-                        }
-                        if (modelSelect.value === kiaModels[0]) {
-                            carPrice === kiaModelsPrice[0];
-                            console.log(carPrice);
-                        } else if (modelSelect.value === kiaModels[1]) {
-                            carPrice === kiaModelsPrice[1];
-                            console.log(carPrice);
-                        } else {
-                            carPrice === kiaModelsPrice[3];
-                            console.log(carPrice);
-                        }
-                        break;
-                    }
-                    case 'mazda': {
-                        models = mazdaModels;
-                        break;
-                    }
-                    case 'volvo': {
-                        models = volvoModels;
-                        break;
-                    }
-                }
+        let options = '';
+        let models = [];
+        let carPrice = [];
 
-                for (let model of models) {
-                    options += `<option value="${model}">${model}</option>`;
-                }
-
-                modelSelect.innerHTML = options;
+        switch (brand) {
+            case 'kia': {
+                models = kiaModels;
+                carPrice = kiaModelsPrice;
+                createOptionHtml(models, carPrice);
+                break;
             }
-
-            let price = 0;
-
-
-
-
-            // const brandPrice = document.querySelector('#brand').value;
-            // console.log(brandPrice);
-            // const modelPrice = document.querySelector('#model').value;
-            // console.log(modelPrice);
-            // const yearPrice = document.querySelector('#year').value;
-            // console.log(yearPrice);
-
-
-
-            const gearboxPrice = document.querySelector('[name="gearbox"]:checked').value;
-            // console.log(gearboxPrice);
-
-            const enginePrice = document.querySelector('[name="engine"]:checked').value;
-            // console.log(enginePrice);
-
-            // 
-            // const result = Number(brandPrice) + Number(modelPrice) + Number(yearPrice) + Number(gearboxPrice) + Number(enginePrice);
-            // console.log(result);
-
-            result.textContent = "Стоимость автомобиля " + price + " рублей.";
-            // console.log(resultHTML.innerHTML);
-
-        });
-
-        const range = document.querySelector('#year');
-        const rangeValue = document.querySelector('.range__value');
-
-        range.oninput = function () {
-            if (this.value == 0) {
-                rangeValue.textContent = this.value;
-            } else if (this.value == 1) {
-                rangeValue.textContent = this.value + " год";
-            } else if (2 <= this.value && this.value <= 4){
-                rangeValue.textContent = this.value + " года";
-            } else {
-                rangeValue.textContent = this.value + " лет";
+            case 'mazda': {
+                models = mazdaModels;
+                carPrice = mazdaModelsPrice;
+                createOptionHtml(models, carPrice);
+                break;
+            }
+            case 'volvo': {
+                models = volvoModels;
+                carPrice = volvoModelsPrice;
+                createOptionHtml(models, carPrice);
+                break;
             }
         }
 
+        function createOptionHtml(models, carPrice) {
+            for (let i = 0; i < models.length; i++) {
+                options += `<option value=${carPrice[i]}>${models[i]}</option>`;
+            }
+        }
 
-        // function sumResult() {
+        modelSelect.innerHTML = options;
+    });
 
-        //     const brandPrice = document.querySelector('#brand').value;
-        //     console.log(brandPrice);
-        //     const modelPrice = document.querySelector('#model').value;
-        //     console.log(modelPrice);
-        //     const yearPrice = document.querySelector('#year').value;
-        //     console.log(yearPrice);
+    modelSelect.addEventListener('change', function (event) {
+        priceSelect = event.target.value;
+        priceResult.push(priceSelect);
+        console.log(priceSelect);
+    });
 
-        //     const gearboxPrice = document.querySelector('[name="gearbox"]:checked').value;
-        //     console.log(gearboxPrice);
+    range.addEventListener('input', function () {
+        let yearPriceCoeff;
+        if (this.value == 0) {
+            rangeValue.textContent = this.value;
+            // yearPriceCoeff = 1;
+            priceResult.push(priceSelect*1);
+        } else if (this.value == 1) {
+            rangeValue.textContent = this.value + " год";
+            // yearPriceCoeff = 0.9;
+            priceResult.push(priceSelect*0.9);
+        } else if (2 <= this.value && this.value <= 4) {
+            rangeValue.textContent = this.value + " года";
+            // yearPriceCoeff = 0.8;
+            priceResult.push(priceSelect*0.8);
+        } else if (5 <= this.value && this.value <= 10) {
+            rangeValue.textContent = this.value + " лет";
+            priceResult.push(priceSelect*0.7);
+            // yearPriceCoeff = 0.7;
+        } else {
+            rangeValue.textContent = this.value + " лет";
+            priceResult.push(priceSelect*0.6);
+            // yearPriceCoeff = 0.6;
+        }
+        // console.log(yearPriceCoeff);
 
-        //     const enginePrice = document.querySelector('[name="engine"]:checked').value;
-        //     console.log(enginePrice);
+    });
 
-        //     const resultHTML = document.querySelector('#result');
-        //     const result = Number(brandPrice) + Number(modelPrice) + Number(yearPrice) + Number(gearboxPrice) + Number(enginePrice);
-        //     console.log(result);
+    // priceResult = Number(priceSelect*yearPriceCoeff);
 
-        //     resultHTML.innerHTML = "Стоимость автомобиля " + result + " рублей.";
-        //     console.log(resultHTML.innerHTML);
+    console.log(priceResult);
 
-        // }
+    const gearboxPrice = document.querySelector('[name="gearbox"]:checked').value;
+    // console.log(gearboxPrice);
 
-        // const button = getElementById('result-btn');
-        // button.addEventListener('click', sumResult);
+    const enginePrice = document.querySelector('[name="engine"]:checked').value;
+    // console.log(enginePrice);
 
+    // 
+    // const result = Number(brandPrice) + Number(modelPrice) + Number(yearPrice) + Number(gearboxPrice) + Number(enginePrice);
+    // console.log(result);
 
-
-
-
-
-        // const brandSelect = document.querySelector('#brand');
-        // brandSelect.addEventListener('change', fillModelsOption);
-
-        // function fillModelsOption() {
-        //     const modelSelect = document.querySelector('#model');
-
-        //     console.log(brand);
-
-        //     if (this) {
-        //         document.querySelector('#model').disabled = false;
-        //     } 
-        // }
+    result.textContent = "Стоимость автомобиля " + priceResult + " рублей.";
+    // console.log(resultHTML.innerHTML);
