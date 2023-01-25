@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="assets/normalize.css">
+    <link rel="stylesheet" href="assets/w18_2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form class="registration-form" name="form" action="" novalidate>
+                <div class="form-item">
+                    <label for="name" class="form-title">Your Name</label>
+                    <input type="text" class="input" name="name" id="name" value="" placeholder="Enter your Name"
+                        required />
+                    <div class="errorMessage" id="error-name"></div>
+                </div>
+                <div class="form-item">
+                    <label for="email" class="form-title">Your Email</label>
+                    <input type="email" class="input" name="email" size="50" id="email" value=""
+                        placeholder="Enter your Email" required />
+                    <div class="errorMessage" id="error-email"></div>
+                </div>
+                <div class="form-item">
+                    <label for="phone" class="form-title">Your Phone</label>
+                    <input type="tel" class="input" name="phone" id="phone" value=""
+                        placeholder="Enter your Phone" required />
+                    <div class="errorMessage" id="error-phone"></div>
+                </div>
+                <div class="form-item">
+                    <label for="password" class="form-title">Your Password</label>
+                    <input type="password" class="input" name="password" id="password" value=""
+                        placeholder="Enter your Password" required />
+                    <div class="errorMessage" id="error-password"></div>
+                </div>
+                <div class="form-item">
+                    <label for="confirm" class="form-title">Confirm Password</label>
+                    <input type="password" class="input" name="confirm" id="confirmPass" value=""
+                        placeholder="Confirm your Password" required />
+                    <div class="errorMessage" id="error-confirm"></div>
+                </div>
+                <div class="form-item">
+                    <button type="submit" class="register" id="register">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <div class="popup__content">
+            <span class="popup__close">&times;</span>
+            <div id="popup__text">Добро пожаловать,</div>
+        </div>
+    </div>
+
+    <script src="assets/w18_2.js"></script>
+</body>
+
+</html>
