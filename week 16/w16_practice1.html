@@ -86,6 +86,8 @@
 
             function askMore() {
                 let number = Number(askNum.value);
+                // ИСПРАВИТЬ
+                // Когда отправляешь пустую строку, при сортировке в input выдаёт первой запятую
 
                 if (Number.isNaN(number)) {
                     return;
