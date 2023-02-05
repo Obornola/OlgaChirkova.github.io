@@ -65,7 +65,6 @@ function modelOption(event) {
 
 function selectedModel(event) {
     priceSelect = event.target.value;
-    console.log(priceSelect);
 }
 
 function rangeCarAge() {
@@ -103,7 +102,7 @@ function calculateResult() {
     for (equipment of equipmentCheckbox) {
         if (equipment.checked == true) {
             priceResult = priceResult + Number(equipment.value);
-        }else{
+        } else {
             priceResult = priceResult;
         }
     }
