@@ -1,0 +1,13 @@
+@import '../../style/variables';
+
+.container {
+    @include flexPart(column);
+
+
+    .block {
+        @include flexPart(row);
+        width: 800px;
+        min-height: 200px;
+        margin: 20px 0 20px 0;
+    }
+}

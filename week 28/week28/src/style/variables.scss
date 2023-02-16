@@ -1,0 +1,25 @@
+$topBlue: rgb(126, 126, 194);
+$middleBlue: rgb(180, 180, 213);
+$topGreen: rgb(122, 138, 122);
+$middleGreen: rgb(158, 188, 158);
+$topRed: rgb(179, 95, 95);
+$middleRed: rgb(212, 140, 140);
+$centerGrey: rgb(238, 234, 234);
+$bottomGrey: rgb(221, 216, 216);
+
+$topTextColor: rgb(254, 246, 246);
+$bottomTextColor: rgb(37, 37, 37);
+
+$borderTable: 1px solid rgb(242, 242, 242);
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexPart ($direction) {
+    @include center();
+    flex-direction: $direction;
+}
+
