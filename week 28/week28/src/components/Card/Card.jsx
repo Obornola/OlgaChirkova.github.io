@@ -8,7 +8,6 @@ function Card(props) {
   
 function handleSelect(){
   props.setCount(id);
-  console.log(id);
 }
 
   return (

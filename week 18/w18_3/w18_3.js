@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const comments = document.querySelector('.comments');
-    const textInput = document.querySelector('.textarea');
+    const showComments = document.querySelector('.comments');
+    const textArea = document.querySelector('.textarea');
     const button = document.querySelector('.btn');
 
-    let arrComm = [];
+    let arrComments = [];
 
     function showCommentHTML() {
-        comments.innerHTML = "";
+        showComments.innerHTML = "";
         html = "";
-        arrComm.forEach((comm, index) => {
+        arrComments.forEach((comm, index) => {
             html += `
             <div class='comment-add' id = 'action-${index}'>
                 ${comm}
@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         });
-        comments.innerHTML += html;
+        showComments.innerHTML += html;
     }
 
     function checkSpam() {
-        let text = textInput.value;
-        textInput.value = "";
+        let text = textArea.value;
+        textArea.value = "";
 
         const spamWords = ['viagra', 'XXX'];
         for (let word of spamWords) {
@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
             filteredText = text.replace(regexp, '*****');
         };
 
-        arrComm.push(filteredText);
-        comments.innerHTML = "";
+        arrComments.push(filteredText);
+        showComments.innerHTML = "";
 
         showCommentHTML();
 

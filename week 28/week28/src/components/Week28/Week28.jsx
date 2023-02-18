@@ -7,14 +7,15 @@ const arrStyle = ["themeBlue", "themeGreen", "themeRed", "themeBlack"];
 
 function Week28() {
   const [count, setCount] = useState(-1);
-  console.log(count);
+  
   return (
     <div className={style.container}>
       <h3>Неделя 28. Тарифы</h3>
       <div className={style.block}>
       {
         data.map((item, index)=>
-      <Card title={item.title}
+      <Card id={item.id}
+            title={item.title}
             price={item.price}
             speed={item.speed}
             traffic={item.traffic}
